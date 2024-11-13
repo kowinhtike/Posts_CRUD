@@ -20,4 +20,8 @@ class MyController extends Controller
         $posts = Post::all();
         return view('posts',compact('posts'));
     }
+
+    public function goCreate(){
+        return view('create');
+    }
 }

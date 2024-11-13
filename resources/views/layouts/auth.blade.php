@@ -10,7 +10,7 @@
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    {{-- <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">Win Htike</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -19,26 +19,17 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link {{Request::is('/') ? 'active' : ''  }}" aria-current="page" href="{{route('home')}}">Home</a>
+                <a class="nav-link {{Request::is('login') ? 'active' : ''  }}" aria-current="page" href="{{route('login')}}">Login</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link {{Request::is('about') ? 'active' : ''  }}" href="{{route('about')}}">About</a>
+                <a class="nav-link {{Request::is('register') ? 'active' : ''  }}" href="{{route('register')}}">Register</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link {{Request::is('posts') ? 'active' : ''  }}" href="{{route('posts')}}">Posts</a>
-              </li>
-              @if (session()->has('admin'))
-              <li class="nav-item">
-                <a class="nav-link {{Request::is('create') ? 'active' : ''  }}" href="{{route('create')}}">Create Post</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link {{Request::is('logout') ? 'active' : ''  }}" href="{{route('logout')}}">Logout</a>
-              </li>
-              @endif
+              
             </ul>
           </div>
         </div>
-      </nav>
+      </nav> --}}
+
       <div class="container">
         <div class="row">
           <div class="col">

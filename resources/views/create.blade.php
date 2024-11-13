@@ -8,9 +8,9 @@
             {{ session('message') }}
         </div>
     @endif
-    <h1>Posts Page</h1>
+    <h1>Create Page</h1>
 
-    {{-- <form class="form-control" action="{{ route('newPost') }}" method="post" enctype="multipart/form-data" >
+    <form class="form-control" action="{{ route('newPost') }}" method="post" enctype="multipart/form-data" >
         @csrf
         <div class="mb-3">
             <label for="title" class="form-label">Post Title</label>
@@ -41,23 +41,8 @@
         <div class=" text-end">
             <button class="btn btn-dark" type="submit">Submit</button>
         </div>
-    </form> --}}
+    </form>
 
-    <div class="container">
-        <div class="d-flex gap-3">
-            @foreach ($posts as $post)
-                <div class="card" style="width: 18rem;">
-                    <img src="{{asset('storage/'.$post->url)}}" class="card-img-top" alt="{{ $post->title }}">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ $post->title }}</h5>
-                        <p> {{$post->body}} </p>
-
-                        <a href="{{ route('viewPost', ['id' => $post->id]) }}" class="btn btn-primary">View Post</a>
-                    </div>
-                </div>
-            @endforeach
-        </div>
-    </div>
 
 
 @endsection
