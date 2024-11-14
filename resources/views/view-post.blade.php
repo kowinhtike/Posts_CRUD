@@ -20,7 +20,7 @@
 
     </p> --}}
     <img class="mb-3" src="{{asset('storage/'.$post->url)}}"  alt="{{ $post->title }}">
-    @if (session()->has('admin'))
+    @if (Auth::check())
     <div class=" d-flex gap-3">
         <a class="btn btn-secondary" href="{{ route('editPost', ['id' => $post->id]) }}">Edit</a>
         <form action="{{ route('removePost', ['id' => $post->id]) }}" method="post">

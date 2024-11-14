@@ -27,7 +27,7 @@
               <li class="nav-item">
                 <a class="nav-link {{Request::is('posts') ? 'active' : ''  }}" href="{{route('posts')}}">Posts</a>
               </li>
-              @if (session()->has('admin'))
+              @if (Auth::check())
               <li class="nav-item">
                 <a class="nav-link {{Request::is('create') ? 'active' : ''  }}" href="{{route('create')}}">Create Post</a>
               </li>

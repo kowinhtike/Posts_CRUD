@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\MyController;
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\SessionController;
@@ -14,7 +15,8 @@ Route::controller(MyController::class)->group(function () {
     Route::get('/about', 'goAbout')->name("about");
 
     Route::get('/posts', 'goPosts')->name('posts');
-    Route::get('/create', 'goCreate')->name('create')->middleware(AuthMiddleware::class);
+    // Route::get('/create', 'goCreate')->name('create')->middleware(AuthMiddleware::class);
+    Route::get('/create', 'goCreate')->name('create')->middleware('auth');
 });
 
 Route::controller(PostsController::class)->group(function () {
@@ -35,7 +37,7 @@ Route::controller(SessionController::class)->group(function () {
 
 
 
-Route::controller(AuthController::class)->group(function () {
+Route::controller(CustomAuthController::class)->group(function () {
     Route::get('/login', "login")->name('login');
     Route::post('/login','loginSave')->name('loginSave');
     Route::get('/register','register')->name('register');
